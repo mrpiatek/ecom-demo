@@ -1,0 +1,14 @@
+App\Entity\Cart:
+    operations:
+        ApiPlatform\Metadata\Post:
+            security: "is_granted('ROLE_USER')"
+            processor: App\State\CartProcessor
+
+        ApiPlatform\Metadata\Get:
+            security: "is_granted('ROLE_ADMIN') or object.user == user"
+            normalizationContext:
+                groups: ['cart:view']
+                
+        ApiPlatform\Metadata\GetCollection:
+            normalizationContext:
+                groups: ['cart:view']

@@ -1,0 +1,16 @@
+App\Entity\Product:
+  product_1:
+    name: Red Dead Redemption 2
+    price: 19999
+  product_2:
+    name: Outward
+    price: 8999
+  product_3:
+    name: Deep Rock Galactic
+    price: 3999
+  product_4:
+    name: Ready Or Not
+    price: 10700
+  product_5:
+    name: Disco Elysium
+    price: 4000

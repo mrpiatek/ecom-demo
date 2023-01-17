@@ -1,0 +1,30 @@
+App\Entity\Cart:
+    properties:
+        lineItems:
+            - Count:
+                max: 3
+App\Entity\LineItem:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [cart, product]
+    properties:
+        product:
+            - NotBlank: ~
+        quantity:
+            - NotBlank: ~
+            - Range:
+                min: 1
+                max: 10
+        cart:
+            - NotBlank: ~
+App\Entity\Product:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [name]
+    properties:
+        name:
+            - NotBlank: ~
+        price:
+            - NotBlank: ~
+            - Range:
+                min: 0

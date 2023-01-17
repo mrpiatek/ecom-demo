@@ -1,0 +1,12 @@
+App\Entity\User:
+  admin:
+    username: admin
+    password: 21232f297a57a5a743894a0e4a801fc3 # "admin"
+    roles:
+      - ROLE_ADMIN
+  user_1:
+    username: user1
+    password: 24c9e15e52afc47c225b757e7bee1f9d # "user1"
+  user_2:
+    username: user2
+    password: 7e58d63b60197ceb55a1c487989a3720 # "user2"

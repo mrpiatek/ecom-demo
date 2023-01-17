@@ -1,0 +1,35 @@
+App\Entity\LineItem:
+    operations:
+        ApiPlatform\Metadata\Post:
+            processor: App\State\LineItemProcessor
+            securityPostDenormalize: "is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') and object.cart.user == user"
+            uriTemplate: /carts/line_items
+
+        ApiPlatform\Metadata\GetCollection:
+            security: "is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') and object.cart.user == user"
+            uriTemplate: '/carts/{cartId}/line_items'
+            uriVariables:
+                cartId:
+                    toProperty: 'cart'
+                    fromClass: App\Entity\Cart
+
+        ApiPlatform\Metadata\Delete:
+            security: "is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') and object.cart.user == user"
+            uriTemplate: '/carts/line_items/{id}'
+            uriVariables:
+                id:
+                    fromClass: App\Entity\LineItem
+
+        ApiPlatform\Metadata\Patch:
+            security: "is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') and object.cart.user == user"
+            uriTemplate: '/carts/line_items/{id}'
+            uriVariables:
+                id:
+                    fromClass: App\Entity\LineItem
+                    
+        ApiPlatform\Metadata\Put:
+            security: "is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') and object.cart.user == user"
+            uriTemplate: '/carts/line_items/{id}'
+            uriVariables:
+                id:
+                    fromClass: App\Entity\LineItem

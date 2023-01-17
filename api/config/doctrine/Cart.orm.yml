@@ -1,0 +1,17 @@
+App\Entity\Cart:
+  type: entity
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: custom
+      customIdGenerator:
+        class: doctrine.uuid_generator
+  oneToMany:
+    lineItems:
+      targetEntity: LineItem
+      mappedBy: cart
+      cascade: ['persist', 'remove']
+  manyToOne:
+    user:
+      targetEntity: User

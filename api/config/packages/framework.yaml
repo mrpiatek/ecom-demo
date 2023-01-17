@@ -1,0 +1,17 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    http_method_override: false
+    
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    trusted_hosts: '%env(TRUSTED_HOSTS)%'
+    trusted_headers: [ 'x-forwarded-for', 'x-forwarded-proto' ]
+    php_errors:
+        log: true
+    serializer:
+        enable_annotations: false
+        mapping:
+            paths: ['%kernel.project_dir%/config/serialization.yaml']
+
+when@test:
+    framework:
+        test: true

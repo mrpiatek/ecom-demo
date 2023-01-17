@@ -1,0 +1,28 @@
+App\Entity\Cart:
+    attributes:
+        id: ~
+        lineItems:
+            groups: ['cart:view']
+        total:
+            groups: ['cart:view']
+App\Entity\LineItem:
+    attributes:
+        id: ~
+        product:
+            groups: ['cart:view']
+        quantity: ~
+        cart: ~
+App\Entity\Product:
+    attributes:
+        id: ~
+        name:
+            groups: ['cart:view']
+        price:
+            groups: ['cart:view']
+App\Entity\User:
+    attributes:
+        id: ~
+        username:
+            groups: ['cart:view']
+        password:
+            ignore: true

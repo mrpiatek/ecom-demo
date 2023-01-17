@@ -1,0 +1,35 @@
+App\Entity\Product:
+    operations:
+        ApiPlatform\Metadata\Post:
+            security: "is_granted('ROLE_ADMIN')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true
+            processor: App\State\CartProcessor
+
+        ApiPlatform\Metadata\Put:
+            security: "is_granted('ROLE_ADMIN')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true
+            processor: App\State\CartProcessor
+
+        ApiPlatform\Metadata\Patch:
+            security: "is_granted('ROLE_ADMIN')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true
+            processor: App\State\CartProcessor
+
+        ApiPlatform\Metadata\Delete:
+            security: "is_granted('ROLE_ADMIN')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true
+            processor: App\State\CartProcessor
+
+        ApiPlatform\Metadata\Get:
+            security: "is_granted('ROLE_USER')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true
+            
+        ApiPlatform\Metadata\GetCollection:
+            security: "is_granted('ROLE_USER')"
+            paginationMaximumItemsPerPage: 3
+            paginationClientItemsPerPage: true

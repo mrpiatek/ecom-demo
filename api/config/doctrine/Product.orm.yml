@@ -1,0 +1,15 @@
+App\Entity\Product:
+  type: entity
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: custom
+      customIdGenerator:
+        class: doctrine.uuid_generator
+  fields:
+    name:
+      type: string
+      unique: true
+    price:
+      type: integer

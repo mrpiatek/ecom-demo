@@ -1,0 +1,23 @@
+App\Entity\User:
+  type: entity
+  repositoryClass: App\Repository\UserRepository
+  table: "`user`"
+  indexes:
+    username_index:
+      columns: [ username ]
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: custom
+      customIdGenerator:
+        class: doctrine.uuid_generator
+  fields:
+    username:
+      type: string
+      length: 180
+      unique: true
+    roles:
+      type: json
+    password:
+      type: string

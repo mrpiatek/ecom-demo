@@ -1,0 +1,18 @@
+App\Entity\LineItem:
+  type: entity
+  id:
+    id:
+      type: uuid
+      generator:
+        strategy: custom
+      customIdGenerator:
+        class: doctrine.uuid_generator
+  fields:
+    quantity:
+      type: integer
+  manyToOne:
+    cart:
+      targetEntity: Cart
+      inversedBy: lineItems
+    product:
+      targetEntity: Product
